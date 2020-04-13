@@ -1,9 +1,80 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>TH3APP</title>
-    </head>
-    <body>
-        <center>APP IS WORKING</center>
-    </body>
+  <head>
+    <title>TH3APP</title>
+  </head>
+  <body>
+    <center>User CRUD</center>
+    <h1>Create a user</h1>
+    <p>[POST] : https://th3app.herokuapp.com/user/create</p>
+    <p>Body : {"username":"whatever"}</p>
+    <hr />
+    <h1>Delete a User</h1>
+    <p>[Delete] :  https://th3app.herokuapp.com/user?id=1</p>
+    <hr />
+    <h1>Search for a user using letter of his name</h1>
+    <p>[GET] :  https://th3app.herokuapp.com/user/search?name=ever</p>
+    <hr />
+    <h1>Update a user</h1>
+    <p>[POST] :  https://th3app.herokuapp.com/user/update</p>
+    <p>Body : {"username":"what", "id":1}</p>
+    <hr />
+    <h1>Get All Users</h1>
+    <p>[Get] : https://th3app.herokuapp.com/user</p>
+    <hr />
+    <hr />
+    <center>Car CRUD</center>
+    <h1>Create a Car</h1>
+    <p>[POST] :  https://th3app.herokuapp.com/car/create</p>
+    <p>Body : {
+        "UID": "2xx2222",
+            "Description": "libya",
+            "Year": "libya",
+            "Vendor": "libya",
+            "InlandStatus": "libya",
+            "CargoReceived": "libya",
+            "TitleReceived": "libya",
+            "DaysinStorage": "libya",
+            "Origin": "libya",
+            "Destination": "libya",
+            "LoadRequest": "libya",
+            "Consignee": "libya",
+            "createdAt": "2020-04-13T16:01:09.277Z",
+            "updatedAt": "2020-04-13T16:01:09.277Z",
+            "user_id": 3
+        }
+        </p>
+    <hr />
+    <h1>Delete a Car</h1>
+    <p>[Delete] :  https://th3app.herokuapp.com/car?id=1</p>
+    <hr />
+    <h1>Search for a Car using letter of its UID</h1>
+    <p>[GET] :  https://th3app.herokuapp.com/car/search?UID=2xx2222</p>
+    <hr />
+    <h1>Update a car</h1>
+    <p>[POST] :  https://th3app.herokuapp.com/car/update</p>
+    <p>Body : {
+        "id": 2,
+            "UID": "22222",
+            "Description": "libya",
+            "Year": "libya",
+            "Vendor": "libya",
+            "InlandStatus": "libya",
+            "CargoReceived": "libya",
+            "TitleReceived": "libya",
+            "DaysinStorage": "libya",
+            "Origin": "libya",
+            "Destination": "libya",
+            "LoadRequest": "libya",
+            "Consignee": "libya",
+            "createdAt": "2020-04-13T16:01:09.277Z",
+            "updatedAt": "2020-04-13T16:01:09.277Z",
+            "user_id": 3
+         }
+        </p>
+    <hr />
+    <h1>Get All cars</h1>
+    <p>[GET] : https://th3app.herokuapp.com/car</p>
+    
+  </body>
 </html>
