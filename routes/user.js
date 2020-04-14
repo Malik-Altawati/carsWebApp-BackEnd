@@ -42,8 +42,8 @@ router.get("/search", (req, res) => {
 
 ///// delete a user
 router.delete("/", (req, res) => {
-  const { id } = req.query;
-  User.destroy({ where: { id: id } })
+  const { identifier } = req.query;
+  User.destroy({ where: { identifier } })
     .then((data) => {
       if (data === 1) {
         return res.status(200).json({ status: true, message: "user deleted!" });
@@ -61,8 +61,8 @@ router.delete("/", (req, res) => {
 //// update user
 
 router.post("/update", (req, res) => {
-  const { id } = req.body;
-  User.update(req.body, { where: { id } })
+  const { identifier } = req.body;
+  User.update(req.body, { where: { identifier } })
     .then((data) => {
       return res.status(200).json({ status: true, message: "user updated!" });
     })
