@@ -3,7 +3,7 @@ const db = require("../config/database");
 
 const User = require("./User");
 
- 
+
 db.sync()
   .then(() => console.log("cars table is up"))
   .catch((err) => console.log(`Error### ${err}`));
@@ -44,10 +44,12 @@ const Car = db.define("car", {
   },
   Consignee: {
     type: Sequelize.STRING,
-  },
+  }, user_id: {
+    type: Sequelize.INTEGER,
+  }
 
 });
 
-Car.belongsTo(User, { foreignKey: "user_id" });
+// Car.belongsTo(User, { foreignKey: "user_id" });
 
 module.exports = Car;
