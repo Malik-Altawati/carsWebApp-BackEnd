@@ -24,6 +24,7 @@ router.post("/create", (req, res) =>
       return res.status(200).json({ status: true, message: user });
     })
     .catch((err) => {
+      return res.status(200).json({ status: false, message: "username or identifier is used" });
       console.log(err);
     })
 );
