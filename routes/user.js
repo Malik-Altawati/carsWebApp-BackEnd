@@ -18,15 +18,23 @@ router.get("/", (req, res) =>
 );
 
 ///// create a new user
-router.post("/create", (req, res) =>
-  User.create(req.body)
-    .then((user) => {
-      return res.status(200).json({ status: true, message: user });
-    })
-    .catch((err) => {
-      return res.status(200).json({ status: false, message: "username or identifier is used" });
-      console.log(err);
-    })
+router.post("/create", (req, res) => {
+  const { identifier } = req.body
+
+  if (identifier) {
+    User.create(req.body)
+      .then((user) => {
+        return res.status(200).json({ status: true, message: user });
+      })
+      .catch((err) => {
+        return res.status(200).json({ status: false, message: "username is already used" });
+        console.log(err);
+      })
+  } else {
+    return res.status(200).json({ status: false, message: "identifier cant be empty" });
+  }
+
+}
 );
 
 ///// search for a user
