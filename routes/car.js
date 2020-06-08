@@ -3,6 +3,8 @@ const router = express.Router();
 const Car = require("../models/Car");
 const Sequelize = require("sequelize");
 const Op = Sequelize.Op;
+// const multer = require("multer");
+// const upload = multer({ dest: 'uploads/' });
 
 // 🆄🅽🅳🅴🆁 🅳🅴🆅🅴🅻🅾🅿🅼🅴🅽🆃
 
@@ -66,6 +68,22 @@ router.post("/update", (req, res) => {
   Car.update(req.body, { where: { id } })
     .then((data) => {
       return res.status(200).json({ status: true, message: "car updated!" });
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});
+
+
+// add image
+
+
+router.post("/photo/:id", (req, res) => {
+  var id = req.params.id
+  var photos = req.body.photos
+  Car.update({ Photos: photos }, { where: { id } })
+    .then((data) => {
+      return res.status(200).json({ status: true, message: "car photos updated" });
     })
     .catch((err) => {
       console.log(err);

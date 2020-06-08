@@ -46,6 +46,8 @@ const Car = db.define("car", {
     type: Sequelize.STRING,
   }, user_id: {
     type: Sequelize.INTEGER,
+  }, Photos: {
+    type: Sequelize.ARRAY(Sequelize.TEXT)
   }
 
 });
